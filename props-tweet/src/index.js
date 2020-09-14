@@ -135,7 +135,7 @@ const testTweet = {
     timestamps: '2016-07-30 21:24:37'
 }
 
-
+// al componente tweet le entrego el objeto que contiene la info
 ReactDOM.render(
     <Tweet tweet={testTweet}/>,
     document.querySelector('#root')
