@@ -27,6 +27,22 @@ function Tweet({tweet}){
 }
 
 
+
+
+
+Tweet.propTypes = {
+    tweet: PropTypes.shape({
+        hash: PropTypes.string,
+        author: PropTypes.object,
+        time: PropTypes.number,
+        message: PropTypes.string,
+        count: PropTypes.number
+    })
+}
+
+
+
+
 //avatar ahora es estatico, pero lo convertiremos a un componente que accepta props.
 function Avatar({ hash }){
     const url = `${hash}`
@@ -38,11 +54,8 @@ function Avatar({ hash }){
     );
 }
 
-// proptype Avatar
-
 Avatar.propTypes = {
-    avatar:
-    PropTypes.string
+    hash: PropTypes.string
 }
 
 function Message({message}){
@@ -54,8 +67,8 @@ function Message({message}){
 }
 
 Message.propTypes = {
-    message:
-    PropTypes.string
+    message: PropTypes.string.isRequired
+
 }
 
 // author pasa a aceptar props, en este caso recibe las keys del objeto autor que viene de test tweet
@@ -81,10 +94,12 @@ function Author({ author }){
 // valida que el objeto author cumpla con los parametros requeridos
 Author.propTypes= {
     author:PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        handle: PropTypes.string.isRequired
-    })
-}
+        name:
+        PropTypes.string.isRequired,
+        handle:
+        PropTypes.string.isRequired
+    }).isRequired
+};
 
 
 // esta es una funcion normal de JS, puedo pasarla a componente y utilizarla como tal
@@ -120,6 +135,12 @@ const Time = ({ time }) => {
     return (
     <span className="time"> {timeString}</span>
 )};
+
+Time.propTypes = {
+    time: PropTypes.number
+}
+
+
 const ReplyButton = () => (
     <i className="fa fa-reply reply-button" />
 );
@@ -145,6 +166,11 @@ const LikeButton = ({ count }) => (
             </span>
     </span>
 );
+
+LikeButton.propTypes = {
+    count: PropTypes.number
+};
+
 const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button" />
 );
@@ -154,7 +180,7 @@ const testTweet = {
     gravatar: 'https://www.gravatar.com/avatar/0c2d18355cc0a49ffb2697a45c1512b2',
     author: {
         handle: 'Luis',
-        name: 'IAMA Cat Person'
+        name: 'Cucho', 
     },
     likes: 2,
     retweets:0,
