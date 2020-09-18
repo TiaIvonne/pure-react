@@ -1,0 +1,11 @@
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 50px;
+  font-size: 14px;
+}
+
+.card{
+    width: 40%;
+    text-align: left;
+    position: relative;
+}

@@ -1,0 +1,10 @@
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 50px;
+  font-size: 14px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
