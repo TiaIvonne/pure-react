@@ -39,6 +39,7 @@ class House extends React.Component {
         console.log(this.state)
     }
 
+
     // esta funcion apaga las luces de toda la pieza, toma el estado que tenga y lo cambia a falso
     turnOffAllLights = () => {
         this.setState({
@@ -55,15 +56,15 @@ class House extends React.Component {
         return(
             <div>
             <p>La luz de la cocina esta {texto(this.state.piezas.kitchen)}</p>
-            <button onClick={() => this.handleChanges('kitchen')}>
+                <button onClick={() => this.handleChanges('kitchen')}>
                 Kitchen
-            </button>
+                </button>
             <p> La luz del bano esta {texto(this.state.piezas.bathroom)}</p>
-            <button onClick={() => this.handleChanges('bathroom')}>
+                <button onClick={() => this.handleChanges('bathroom')}>
                 Bathroom
-            </button>
+                </button>
             <p>Quieres apagar todas las luces?</p>
-            <button onDoubleClick ={this.turnOffAllLights}>Turn off the lights </button>
+                <button onDoubleClick ={this.turnOffAllLights}>Turn off the lights </button>
             </div>
         )
     }
