@@ -33,8 +33,8 @@ const AudioControlsWithOneObject = () => {
 
 
     // la doble arrow function significa que es una funcion que retorna otra 
-    // el escribir esta funcion de este modo ahorra codigo pues pasa a un nivel mas alto de abtraccion 
-    // en caso contrario se deberia escribir funciones para cada boto increaseVolume, increaseTreble y asi
+    // el escribir esta funcion de este modo ahorra codigo pues pasa a un nivel mas alto de abstraccion 
+    // en caso contrario se deberia escribir funciones para cada boton increaseVolume, increaseTreble y asi
 
     const increase = function(key){
         return function(){
