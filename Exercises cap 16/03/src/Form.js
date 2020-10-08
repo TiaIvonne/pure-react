@@ -43,77 +43,69 @@ export class Form extends Component {
 
     render(){
         const {topping, text} = this.state
-        return(
-        <>
-        <h1>Order your pizza</h1>
-        <h2>Size</h2>
-        <form>
-           <label>
+        return (
+          <>
+            <h1>Order your pizza</h1>
+            <h2>Size</h2>
+            <form>
+              <label>
                 <input
-                    type='radio'
-                    value='small'
-                    checked={this.state.size === 'small'}
-                    onChange={this.setSize}
+                  type="radio"
+                  value="small"
+                  checked={this.state.size === "small"}
+                  onChange={this.setSize}
                 />
                 Small
-            </label>
-            <label>
+              </label>
+              <label>
                 <input
-                    type='radio'
-                    value='medium'
-                    checked={this.state.size === 'medium'}
-                    onChange={this.setSize}
+                  type="radio"
+                  value="medium"
+                  checked={this.state.size === "medium"}
+                  onChange={this.setSize}
                 />
                 Medium
-            </label>
-            <label>
+              </label>
+              <label>
                 <input
-                    type='radio'
-                    value='large'
-                    checked={this.state.size === 'large'}
-                    onChange={this.setSize}
+                  type="radio"
+                  value="large"
+                  checked={this.state.size === "large"}
+                  onChange={this.setSize}
                 />
                 Large
-            </label>
-            <h2>Topping</h2>
-            {/* select topping seccion */}
-            <select
-                onChange={this.setTopping}
-                value={topping}
-            >
-                <option value=''>
-                - choose a topping -
-                </option>
-                <option value = 'pepperoni'>
-                    Pepperoni
-                </option>
-                <option value = 'onion'>
-                    Onion
-                </option>
-            </select>
-            {/* checkbox button section*/}
-            <div>
-            <label>
-            <input
-                type='checkbox'
-                checked={this.state.glutenFree}
-                onChange={this.setGlutenFree}
-            />
-            Gluten free
-            </label>
-            </div>
-            <div>
-            <h2>Special instructions</h2>
-            <input
-                type='text'
-                value={text}
-                placeholder='extra cheese'
-                onChange={this.setText}
-            />
-            </div>
-        </form>
+              </label>
+              {/* select topping seccion */}
+              <h2>Topping</h2>
+              <select onChange={this.setTopping} value={topping}>
+                <option value="">- choose a topping -</option>
+                <option value="pepperoni">Pepperoni</option>
+                <option value="onion">Onion</option>
+              </select>
+              {/* checkbox button section*/}
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={this.state.glutenFree}
+                    onChange={this.setGlutenFree}
+                  />
+                  Gluten free
+                </label>
+              </div>
+              {/* Special instructions section */}
+              <div>
+                <h2>Special instructions</h2>
+                <input
+                  type="text"
+                  value={text}
+                  placeholder="extra cheese"
+                  onChange={this.setText}
+                />
+              </div>
+            </form>
             <button onClick={this.submitButton}>Place order</button>
-        </>
-        )
+          </>
+        );
     }
 }

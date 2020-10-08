@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import {Forms} from './Forms.js'
+import {FormCustomHooks} from './FormCustomHooks.js'
 /*
 class Example extends Component {
     state={
@@ -47,7 +48,7 @@ class Examples extends Component{
         return(
         <>
         <div>Order Your Pizza HOOKS</div>
-        <Forms/>
+        <FormCustomHooks/>
         </>
         )
     }
