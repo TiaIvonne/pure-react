@@ -1,6 +1,6 @@
 import React, {Component}from 'react'
 import ReactDOM from 'react-dom'
-import {ShoppingList} from './ShoppingList.js'
+import { ShoppingList } from './ShoppingList.js'
 
 class ReducerHook extends Component {
     render(){
