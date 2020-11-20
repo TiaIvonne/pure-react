@@ -1,17 +1,58 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'next':
+      return (state + 1) ;
+    case 'off':
+      return 0;
+    default:
+      return state;
+  }
+};
+
+function Room() {
+  const [level, dispatch] = useReducer(
+    reducer,
+    0
+  );
+
+  return (
+    <>
+      Lights are: {describeLightLevel(level)}
+      <br />
+      <button
+        onClick={() => dispatch({ type: 'next' })}
+      >
+        Next
+      </button>
+      <button
+        onClick={() => dispatch({ type: 'off' })}
+      >
+        Turn Off
+      </button>
+    </>
+  );
+}
+
+function describeLightLevel(level) {
+  switch (level) {
+    case 0:
+      return 'off';
+    case 1:
+      return 'low';
+    case 2:
+      return 'medium';
+    case 3:
+      return 'high';
+    default:
+      return 'broken';
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Room />,
+  document.querySelector('#root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
